@@ -1,4 +1,6 @@
 import React from "react";
+import {DialogItem} from "./DialogItem";
+
 // import s from './Dialogs.module.css';
 // import {DialogItem} from "./DialogItem";
 
@@ -23,18 +25,16 @@ export const Dialogs = () => {
 
     return <div>
         <div>
+
             <div>
-                {/*<DialogItem />*/}
+                <DialogItem id='2' name='Lessy'/>
             </div>
-            {/*<div>*/}
-            {/*    <DialogItem id='2' name='Lessy'/>*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <DialogItem id='3' name='Odri'/>*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <DialogItem id='4' name='Tony'/>*/}
-            {/*</div>*/}
+            <div>
+                <DialogItem id='3' name='Odri'/>
+            </div>
+            <div>
+                <DialogItem id='4' name='Tony'/>
+            </div>
         </div>
         {/*<div className={s.messages}>*/}
         {/*    <div className={s.message}>*/}
