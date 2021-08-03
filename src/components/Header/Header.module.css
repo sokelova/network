@@ -1,0 +1,10 @@
+.logo{
+    position: absolute;
+    margin: 50px;
+    font-size: 3rem;
+    font-family: "Academy Engraved LET";
+    color: blueviolet;
+}
+.header{
+    grid-area: h;
+}
