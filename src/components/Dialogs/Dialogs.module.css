@@ -1,6 +1,11 @@
 .dialogs{
     display: grid;
+    grid-template-areas:
+        "d m";
     grid-template-columns: 2fr 10fr;
+}
+.dialog_user{
+    grid-area: d;
 }
 .dialogs_item{
     padding: 10px;
@@ -11,6 +16,7 @@
 .dialog{
     color: yellow;
 }
-.message{
+.messages{
+    grid-area: m;
     color:red;
 }

@@ -1,31 +1,15 @@
 import React from "react";
-import {DialogItem} from "./DialogItem";
-
-// import s from './Dialogs.module.css';
-// import {DialogItem} from "./DialogItem";
-
-
-// type DialogsType = {
-//     id: string
-//     name: string
-// }
-//
-// type MessageType ={
-//     message: string
-// }
+import { DialogItem } from "./DialogItem/DialogItem";
+import s from './Dialogs.module.css';
+import {Message} from "./Message/Message";
 
 export const Dialogs = () => {
 
-    // let messagesTable = [
-    //     {id:1, name:"Dimon"},
-    //     {id:2, name:'Jon'},
-    //     {id:3, name:'Kitty'},
-    //     {id:4, name:'Den'}
-    // ]
-
-    return <div>
-        <div>
-
+    return <div className={s.dialogs}>
+        <div className={s.dialog_user}>
+            <div>
+                <DialogItem id='1' name='Tory'/>
+            </div>
             <div>
                 <DialogItem id='2' name='Lessy'/>
             </div>
@@ -36,16 +20,17 @@ export const Dialogs = () => {
                 <DialogItem id='4' name='Tony'/>
             </div>
         </div>
-        {/*<div className={s.messages}>*/}
-        {/*    <div className={s.message}>*/}
-        {/*        <Message message='Hi' />*/}
-        {/*    </div>*/}
-        {/*    <div className={s.message}>*/}
-        {/*        <Message message='Were going to the sea today' />*/}
-        {/*    </div>*/}
-        {/*    <div className={s.message}>*/}
-        {/*        <Message message='Ok)' />*/}
-        {/*    </div>*/}
-        {/*</div>*/}
+
+        <div className={s.messages}>
+            <div className={s.message}>
+                <Message message='Hi' />
+            </div>
+            <div className={s.message}>
+                <Message message='Were going to the sea today' />
+            </div>
+            <div className={s.message}>
+                <Message message='Ok)' />
+            </div>
+        </div>
     </div>
 }
