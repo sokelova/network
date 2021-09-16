@@ -11,6 +11,7 @@ export const Post = (props: PostType) => {
         <div className={`${s.item} ${s.active}`}>
             <img src={photo}/>
             {props.message}
+
             <div>
                 <span>Like</span>
             </div>

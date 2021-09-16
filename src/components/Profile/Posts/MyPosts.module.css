@@ -1,3 +1,6 @@
+*{
+    font-family: -apple-system;
+}
 .posts{
 
 }
@@ -6,4 +9,15 @@
 }
 .active{
     color: darkmagenta;
+}
+.message_post{
+    border: 1px solid darkblue;
+    width: 140px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    color: antiquewhite;
+}
+.likes{
+    color: cornflowerblue;
+    padding-left: 100px;
 }

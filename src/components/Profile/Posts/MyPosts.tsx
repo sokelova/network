@@ -1,23 +1,39 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import s from './MyPosts.module.css';
-import {Post} from "./Post/Post";
+import {ActionTypes, PostsType, store} from "../../../redux/store";
+import {addPostAC, ChangeNewTextAC} from "../../../redux/profile-reducer";
 
-export const MyPosts = () => {
+type PropsType = {
+    addPostCallback: (postText: string) => void
+    changeNewTextCallback: (newText: string) => void
+    message: string
+    posts: Array<PostsType>
+    dispatch: (action: ActionTypes) => void
+}
+
+export const MyPosts = (props: PropsType) => {
+    const addPost = () => {
+        props.dispatch(addPostAC(props.message))
+    }
+    const newTextChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        props.dispatch(ChangeNewTextAC(e.currentTarget.value));
+    }
     return <div>
-        MyPosts
         <div>
             New post
         </div>
         <div>
-            <textarea></textarea>
-            <button>Add Post</button>
+            <textarea value={props.message} onChange={newTextChangeHandler}></textarea>
+            <button onClick={addPost}>Add Post</button>
         </div>
+        MyPosts
         <div className={s.posts}>
-            <Post message='Hi, now are you?'/>
-            <Post message='Exxyyyy!!!'/>
-            <Post message='Great day'/>
-            <Post message='Were going to the sea today'/>
-            <Post message='Presentation of a new phone'/>
+            {props.posts.map(p =>
+                <div className={s.post} key={p.id}>
+                    <div className={s.message_post}>{p.message}</div>
+                    <div className={s.likes}>like {p.likesCount}</div>
+                </div>
+            )}
         </div>
     </div>
 }
