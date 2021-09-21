@@ -23,11 +23,13 @@ const App: React.FC<PropsType> = (props) =>{
                 <Navigation />
                 <div className="app-wrapper-content">
                     <Route path='/profile' render={() => <Profile
-                        posts={props.store.profileReducer.posts}
-                        message={props.store.profileReducer.messageForNewPost}
-                        dispatch ={props.dispatch.bind(props.store)}
-                        addCallback={store.addPost.bind(props.store)}
-                        changeNewTextCallback={store.changeNewText.bind(props.store)}
+                        store={props.store}
+                        state={props.store1}
+                        // posts={props.store.profileReducer.posts}
+                        // message={props.store.profileReducer.messageForNewPost}
+                        // dispatch ={props.dispatch.bind(props.store)}
+                        // addCallback={store.addPost.bind(props.store)}
+                        // changeNewTextCallback={store.changeNewText.bind(props.store)}
                     />}/>
                     <Route path='/dialogs' render={() => <Dialogs
                         dialogs={props.store.dialogsReducer.dialogs}

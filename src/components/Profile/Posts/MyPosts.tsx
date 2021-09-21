@@ -4,27 +4,27 @@ import {ActionTypes, PostsType, store} from "../../../redux/store";
 import {addPostAC, ChangeNewTextAC} from "../../../redux/profile-reducer";
 
 type PropsType = {
-    addPostCallback: (postText: string) => void
-    changeNewTextCallback: (newText: string) => void
-    message: string
+    addPost: () => void
+    ChangeNewText: (newText: string) => void
+    newPostText: string
     posts: Array<PostsType>
-    dispatch: (action: ActionTypes) => void
+    // dispatch: (action: ActionTypes) => void
 }
 
 export const MyPosts = (props: PropsType) => {
-    const addPost = () => {
-        props.dispatch(addPostAC(props.message))
+    const onAddPost = () => {
+        props.addPost();
     }
     const newTextChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        props.dispatch(ChangeNewTextAC(e.currentTarget.value));
+        props.ChangeNewText(e.currentTarget.value);
     }
     return <div>
         <div>
             New post
         </div>
         <div>
-            <textarea value={props.message} onChange={newTextChangeHandler}></textarea>
-            <button onClick={addPost}>Add Post</button>
+            <textarea value={props.newPostText} onChange={newTextChangeHandler}></textarea>
+            <button onClick={onAddPost}>Add Post</button>
         </div>
         MyPosts
         <div className={s.posts}>
