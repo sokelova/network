@@ -8,6 +8,9 @@ let reducers = combineReducers({
     profileReducer,
     dialogsReducer
 });
+
 export type NewStoreType = ReturnType<typeof reducers>
+
 let store = createStore(reducers);
+
 export default store

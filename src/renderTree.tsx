@@ -1,15 +1,17 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
-
 import store, {NewStoreType} from "./redux/redux-store";
+import { Provider } from "react-redux";
+
 
 
 export const renderTree = (state: NewStoreType) => {
     ReactDOM.render(
         <React.StrictMode>
-            {/*<App store={store}  dispatch={store.dispatch.bind(store)} store1={store}/>*/}
-            <App store={state}  dispatch={store.dispatch.bind(store)} store1={store}/>
+            <Provider store={store}>
+                <App/>
+            </Provider>
         </React.StrictMode>,
         document.getElementById('root')
     );
