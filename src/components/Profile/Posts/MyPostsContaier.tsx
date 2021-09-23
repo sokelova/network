@@ -5,7 +5,6 @@ import {NewStoreType} from "../../../redux/redux-store";
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
 import {PostsType} from "../../../redux/store";
-import {ChangeNewTextMessageAC, sendMessageAC} from "../../../redux/dialogs-reducer";
 
 type MapDispatchToPropsType = {
     addPost: () => void

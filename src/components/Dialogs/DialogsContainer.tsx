@@ -4,7 +4,7 @@ import {Dialogs} from "./Dialogs";
 import {NewStoreType} from "../../redux/redux-store";
 import { connect } from "react-redux";
 import {Dispatch} from "redux";
-import {ActionTypes, DialogsPageType, PostsType} from "../../redux/store";
+import {DialogsPageType} from "../../redux/store";
 
 type MapDispatchToPropsType = {
     sendMessage: () => void

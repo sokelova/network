@@ -5,6 +5,7 @@ import {Header} from "./components/Header/Header";
 import {Navigation} from "./components/Navigation/Navigation";
 import {Profile} from "./components/Profile/Profile";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
+import {UsersContainer} from "./components/Users/UsersContainer";
 
 const App: React.FC = () =>{
       return (
@@ -13,19 +14,9 @@ const App: React.FC = () =>{
                 <Header />
                 <Navigation />
                 <div className="app-wrapper-content">
-                    <Route path='/profile' render={() => <Profile
-                        // store={store}
-                        // state={store1}
-                        // posts={props.store.profileReducer.posts}
-                        // message={props.store.profileReducer.messageForNewPost}
-                        // dispatch ={props.dispatch.bind(props.store)}
-                        // addCallback={store.addPost.bind(props.store)}
-                        // changeNewTextCallback={store.changeNewText.bind(props.store)}
-                    />}/>
-                    <Route path='/dialogs' render={() => <DialogsContainer
-                        // store={store}
-                        // state={store1}
-                    />}/>
+                    <Route path='/profile' render={() => <Profile />}/>
+                    <Route path='/dialogs' render={() => <DialogsContainer />}/>
+                    <Route path='/users' render={() => <UsersContainer />}/>
                 </div>
             </div>
           </BrowserRouter>
